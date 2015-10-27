@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="无纸化模拟考试系统">
+<meta name="description" content="无纸化模拟考试系统">
+<meta name="keywords" content="无纸化模拟考试系统">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>EMS FOR PHP无纸化模拟考试系统</title>
+<link href="app/core/styles/css/bootstrap.css" rel="stylesheet">
+<link href="app/core/styles/css/moplugin.css" rel="stylesheet">
+<link href="app/user/styles/css/phone.css" rel="stylesheet" type="text/css" />
+<link href="app/core/styles/css/datetimepicker.css" rel="stylesheet">
+<script type="text/javascript" src="app/core/styles/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="app/exam/styles/css/mathquill.css" type="text/css">
+<script type="text/javascript" src="app/core/styles/js/jquery-ui.js"></script>
+<script type="text/javascript" src="app/core/styles/js/jquery.json.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="app/core/styles/js/swfu/swfupload.js"></script>
+<script type="text/javascript" src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="row-fluid top">
+	<div class="container-fluid">
+		<div class="span6"><h3><img src="app/user/styles/img/theme/logo.png" style="margin-top:-21px;"/></h3></div>
+		<div class="span6">
+			<ul class="unstyled" id="userNav" style="margin-top:20px;">
+				<li>
+					<div class="btn-group pull-right">
+						<button class="btn dropdown-toggle" data-toggle="dropdown"><em class="icon-user"></em><span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="javascript;">peadmin</a></li>
+							<li><a class="ajax" href="index.php?user-phone-logout">退出</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div><div class="row-fluid">
+	<div class="container-fluid examcontent">
+		<div class="exambox" id="datacontent">
+			<div class="examform">
+				<ul class="breadcrumb">
+					<li>
+						<span class="icon-home"></span> <a href="index.php?exam-phone">考场选择</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="index.php?exam-phone-basics">毛概</a> <span class="divider">/</span>
+					</li>
+					<li class="active">
+						强化训练
+					</li>
+				</ul>
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#" data-toggle="tab">强化训练</a>
+					</li>
+				</ul>
+				<form action="index.php?exam-phone-exercise" id="exer" method="post">
+                	<div class="control-group">
+						<label class="control-label" for="inputEmail">章节：</label>
+						<div class="controls">
+							<select autocomplete="off" name="args[sectionid]" class="combox input-medium" target="questionnumbers" refUrl="index.php?exam-phone-exercise-ajax-getQuestionNumber&sectionid={value}" needle="needle" msg="请选择章节">
+                        		<option value="">请选择章节</option>
+                        		                        		<option value="2">马克思主义中国化</option>
+                        		                        	</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">题型：</label>
+						<div class="controls">
+							<select autocomplete="off" id="questionnumbers" name="args[questid]" needle="needle" msg="请选择题型">
+                        		<option value="">请先选择章节</option>
+                        	</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"></label>
+						<div class="controls">
+							<input type="hidden" name="setExecriseConfig" value="1" />
+							<button type="submit" class="btn btn-primary">来十道</button>
+						</div>
+					</div>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="container-fluid logfooter">
+		<ul class="inline unstyled">
+			<li>EMS FOR PHP模拟考试系统手机端</li>
+		</ul>
+	</div>
+</div></body>
+</html>
